@@ -1,5 +1,5 @@
 {% set name = "pottery" %}
-{% set version = "1.3.1" %}
+{% set version = "1.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6e3a9e197c42a69ab78df69a4002b4286e3e984011d60913e7b02102f31d42aa
+  sha256: 06f05c208e5bbad756df737b0df5759c1228c17ee187211965d21dded59f96ce
 
 build:
   noarch: python
