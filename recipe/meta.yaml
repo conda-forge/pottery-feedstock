@@ -6,29 +6,31 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: adda303e9357442bcac1d4c7f86aa7deec855e0190c101d09448afbcf5676a74
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - redis-py >=3.4.1
     - mmh3
     - typing_extensions
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - redis-py >=3.4.1
     - mmh3
     - typing_extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pottery
 
