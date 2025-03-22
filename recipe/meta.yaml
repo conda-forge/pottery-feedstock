@@ -1,5 +1,5 @@
 {% set name = "pottery" %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: adda303e9357442bcac1d4c7f86aa7deec855e0190c101d09448afbcf5676a74
+  sha256: c0e223ccfa72d620e4ba16e7e381ab6498745f875e6c939c6b396525e9aee112
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
